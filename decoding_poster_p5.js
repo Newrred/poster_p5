@@ -1,5 +1,5 @@
 
-let pointNum = 1000;
+let pointNum = 1500;
 
 let distVal;
 
@@ -12,19 +12,19 @@ let s;  // second
 let circlePosX = new Array(pointNum);  //circle XY
 let circlePosY = new Array(pointNum);
 
-let rectPosX = new Array(pointNum);  // rect XY
-let rectPosY = new Array(pointNum);
+let randomPosX = new Array(pointNum);  // random XY
+let randomPosY = new Array(pointNum);
 
 let pointPosX = new Array(pointNum);  // draw Point XY
 let pointPosY = new Array(pointNum);
 
-let linePosX = new Array(pointNum);
+let linePosX = new Array(pointNum);  //draw Line XY
 let linePosY = new Array(pointNum);
 
 let img;
 
 function preload() {
-    img = loadImage('poster.png');
+    img = loadImage('poster.png');   //load Image
   }
 
 function setup() {
@@ -52,7 +52,7 @@ function draw() {
     noFill();
     image(img,0,0);
     strokeWeight(2);
-    if (s ==1 || s ==3 || s ==5)
+    if (s ==1 || s ==3 || s ==5)  // middle line
     {
         line(135, 220, 135, 260);
     }
@@ -90,11 +90,11 @@ function circleRectPointXY() {
         rectPosY[q] = random(height);
     }
 
-    for(let v = 0; v < pointNum; v++)
+    for(let v = 0; v < pointNum; v++)  // line X
     {
         linePosX[v] = v;
     }
-    for(let v = 0; v < pointNum; v++)
+    for(let v = 0; v < pointNum; v++)  // line Y
     {
         linePosY[v] = height/2;
     }
@@ -105,7 +105,7 @@ function circleRectPointXY() {
 
 
 
-function drawPoint2()
+function drawPoint2()    // draw
 { 
     
     
@@ -155,45 +155,3 @@ function drawPoint2()
     }
     
 }
-
-
-
-
-/*
-function drawPoint()
-{
-    circleRectPointXY();
-    s = second();
-    s %= 2;
-    if(s == 1)
-    {
-        for(let r = 0; r <pointNum; r++){
-            pointPosX[r] = rectPosX[r];
-            pointPosY[r] = rectPosY[r];
-        for(let u = 0; u <pointNum; u++)
-        {
-            
-            
-            pointPosX[u] += (rectPosX[r] - circlePosX[r])*0.6;
-            pointPosY[u] += (rectPosY[r] - circlePosY[r])*0.6;
-
-            point(pointPosX[u], pointPosY[u]);
-        }
-    }
-    }else if( s==0){
-        for(let e = 0; e <pointNum; e++){
-            pointPosX[e] = circlePosX[e];
-            pointPosY[e] = circlePosY[e];
-        for(let t = 0; t <pointNum; t++)
-        {
-            
-            pointPosX[t] += (circlePosX[e] - rectPosX[e])*0.6;
-            pointPosY[t] += (circlePosY[e] - rectPosY[e])*0.6;
-
-            point(pointPosX[t], pointPosY[t]);
-        }
-    }
-    }
-}
-
-*/
