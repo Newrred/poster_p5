@@ -82,12 +82,12 @@ function circleRectPointXY() {
 
     for(let f = 0; f < pointNum; f++)  //rect X
     {
-        rectPosX[f] = random(width);
+        randomPosX[f] = random(width);
     }
 
     for(let q = 0; q < pointNum; q++)  // rect Y
     {
-        rectPosY[q] = random(height);
+        randomPosY[q] = random(height);
     }
 
     for(let v = 0; v < pointNum; v++)  // line X
@@ -131,13 +131,13 @@ function drawPoint2()    // draw
             
         }else if(s == 0)
         {
-            pointPosX[w] +=(rectPosX[w] - pointPosX[w]) *0.3;
-            pointPosY[w] +=(rectPosY[w] - pointPosY[w]) *0.2;
+            pointPosX[w] +=(randomPosX[w] - pointPosX[w]) *0.3;
+            pointPosY[w] +=(randomPosY[w] - pointPosY[w]) *0.2;
             strokeWeight(1);
         }else if(s == 2)
         {
-            pointPosX[w] +=(rectPosX[w] - pointPosX[w]) *0.3;
-            pointPosY[w] +=(rectPosY[w] - pointPosY[w]) *0.2;
+            pointPosX[w] +=(randomPosX[w] - pointPosX[w]) *0.3;
+            pointPosY[w] +=(randomPosY[w] - pointPosY[w]) *0.2;
             strokeWeight(1);
         }else if(s ==3)
         {
