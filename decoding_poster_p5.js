@@ -1,5 +1,5 @@
 
-let pointNum = 1500;
+let pointNum = 1000;
 
 let distVal;
 
